@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.6</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <button onclick="Lekerdez()">Nyomj meg!</button>
+
+    <div id="szoveg"></div>
+
+    <script>
+        function Lekerdez() {
+            var request = new XMLHttpRequest();
+
+            request.onreadystatechange = valamiTortent;
+            request.open("GET", "http://localhost:8080/akcio");
+
+            request.send();
+
+            request.responseText();
+            //request.responseXML(); válasz régen
+        }
+
+
+
+        function valamiTortent(e) {
+            //XMLHttpRequest.DONE; 4es
+            if (e.target.readyState === XMLHttpRequest.DONE && e.target.status === 200)
+                alert(e.target.responseText);
+        }
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>

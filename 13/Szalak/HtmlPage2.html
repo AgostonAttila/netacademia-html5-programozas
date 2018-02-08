@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <input type="file" multiple="multiple" onchange="olvass(this.files)" />
+
+   <button id="finput" onclick="alert('jajjjj');">Proba</button>
+
+    <script>
+        var worker = new Worker("/scripts/fileworker.js");
+
+        worker.onmessage = function(e){
+            document.write(e.data);
+        }
+
+
+        function olvass(files) {
+           
+            for (var i = 0; i < files.length; i++) {
+                worker.postMessage(files[i]);
+            }
+        }
+
+        ////egyzserre csak egy eseménykezelőm lehet ha sima onclick van
+
+
+        //$('#finput').click(function (e) {
+        //    console.log("$click");
+        //});
+
+        //$('#finput').bind("click", function (e) {  //JQuery is igy csinálja tehát egy tömbbe rakja
+        //    console.log("bind");
+        //});
+
+        //$('#finput').live("click", function (e) {  //ha változik id vagy utolag van vmi berakva karban tartja
+        //    console.log("live");
+        //});
+
+        //document.getElementById('finput').addEventListener  
+
+        //document.getElementById('finput').onclick = function () {
+        //    console.log('click');
+        //}
+
+
+    </script>
+
+</body>
+</html>

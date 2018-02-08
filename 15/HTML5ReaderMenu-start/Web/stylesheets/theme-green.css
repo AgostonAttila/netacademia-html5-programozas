@@ -1,0 +1,19 @@
+﻿body
+{
+    background-color:Black;
+    color:#6DC51A;
+}
+
+.reader-menu-dropdown
+{
+	color:black;
+	background-color: rgba(137, 199, 100, 0.9);
+	background-image: url("../images/green/dropdown-header-bg.png");
+}
+
+#tooltip
+{
+    color: black;
+    background-color: rgba(136, 206, 71, 0.9);
+    border: 2px solid black;
+}

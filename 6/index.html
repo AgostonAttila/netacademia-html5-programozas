@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap 3.3.6</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+        
+        #cucc {
+            background-color: yellow;
+            width: 300px;
+            height: 100px;
+        }
+        
+        #doboz {
+            background-color: green;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+    <img src="http://kep.cdn.index.hu/1/0/840/8401/84019/8401991_2b4a620a205a88a78602b66514b7163c_wm.jpg" alt="">
+    </br>
+    <a href="www.itfactory.hu">IT FACTORY</a>
+    </br>
+    <div id="cucc" draggable="true" ondragstart="megrantotta(event)" ondragend="elejtette(event)" ondrag="huznak()">Dobálható</div>
+    </br>
+    <div id="doboz" ondragenter="folemhuztak()" ondragleave="elvittek()" ondragover="felettemvan()" ondrop="ramdobtak()">Ide pakolj</div>
+
+    <!-- <script defer="defer"></script>   csak betöltés után -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>
+        //document.getElementById("doboz").ondragenter = folemhuztak;
+        //document.getElementById("doboz").addEventListener("dragenter", folemhuztak);
+        //$("#doboz").live("dragenter",folemhuztak);
+
+
+
+        //dragstart
+        function megrantotta(event) {
+            //event.target
+
+            event.dataTransfer.setData("Text", event.target.getAttribute("id"));
+            event.dataTransfer.effectAllowed = "all";
+        }
+
+        function elejtette(event) {
+            alert('oops');
+
+        }
+
+        function huznak(event) {
+
+        }
+
+        //dragenter
+        function folemhuztak(event) {
+            //event.target
+            // var target = this; //ha jQueryvel dobtam akkor megkapom $ ként aki dobta
+
+            var adat = event.dataTransfer.getData("Text");
+            event.target.innerHTML = adat;
+        }
+        //dragleave
+        function elvittek(event) {
+            event.target.innerHTML = "idehozd";
+        }
+
+        function felettemvan(event) {
+            event.preventDefault();
+        }
+
+        function ramdobtak(event) {
+
+        }
+    </script>
+</body>
+
+</html>

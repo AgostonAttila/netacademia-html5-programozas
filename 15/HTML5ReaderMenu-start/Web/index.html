@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html >
+
+
+<html>
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="utf-8">
+
+    <title>100 Könyv</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/menu.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/theme-blue.css" type="text/css" id="themeColors" />
+
+    <script type="text/javascript" src="scripts/jquery/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="scripts/reader/utility.js"></script>
+    <script type="text/javascript" src="scripts/reader/themes.js"></script>
+    <script type="text/javascript" src="scripts/reader/menu.js"></script>
+    <script type="text/javascript" src="scripts/reader/init.js"></script>
+</head>
+<body onload="Reader.init();">
+    <div id="reader-menu">
+        <div id="reader-menu-left" class="reader-menu-buttonContainer">
+            <div id="menu-icon-bookshelf-svg-icon" title="Vissza a könyvekhez" class="reader-menu-imageButton svg-icon">
+            </div>
+            <div id="menu-icon-toc-svg-icon" title="Tartalomjegyzék" class="reader-menu-imageButton svg-icon">
+            </div>
+            <div id="menu-icon-bookmark-svg-icon" title="Könyvjelzők" class="reader-menu-imageButton svg-icon">
+            </div>
+            <div id="menu-icon-fontsize-svg-icon" title="Betűméret" class="reader-menu-imageButton svg-icon">
+            </div>
+            <div id="menu-icon-fontfamily-svg-icon" title="Betűtípus" class="reader-menu-imageButton svg-icon">
+            </div>
+        </div>
+
+        <div id="reader-menu-right" class="reader-menu-buttonContainer">
+            <div id="menu-icon-theme-svg-icon" title="Szín" class="reader-menu-imageButton svg-icon">
+            </div>
+        </div>
+
+
+
+        <div id="reader-menu-fontSize" class="reader-menu-dropdown">
+            <strong>betűméret</strong>
+            <ul>
+                <li>legkisebb</li>
+                <li>kicsi</li>
+                <li>normál</li>
+                <li>nagy</li>
+                <li>legnagyobb</li>
+            </ul>
+        </div>
+        <div id="reader-menu-fontFamily" class="reader-menu-dropdown">
+            <strong>betűtípus</strong>
+            <ul>
+                <li>Cambria</li>
+                <li>Candara</li>
+                <li>Constantia</li>
+                <li>Corbel</li>
+            </ul>
+        </div>
+        <div id="reader-menu-bookmarks" class="reader-menu-dropdown">
+            <strong>könyvjelzők</strong>
+            <ul>
+                <li>432. oldal</li>
+                <li>642. oldal</li>
+            </ul>
+        </div>
+        <div id="reader-menu-toc" class="reader-menu-dropdown">
+            <strong>tartalomjegyzék</strong>
+            <ul>
+                <li>1. fejezet</li>
+                <li>2. fejezet</li>
+            </ul>
+        </div>
+        <div id="reader-menu-about" class="reader-menu-dropdown">
+            <strong>rólunk</strong>
+            <ul>
+                <li>A 100Könyv száz válogatott, magyar könyvet kínál elolvasásra, olyan élményt nyújtva,
+                    mintha egy valódi könyvet tartanál a kezedben.<br />
+                    Oldalunk a Microsoft Magyarország és az Alexandra támogatásával jött létre, az Internet
+                    Explorer 9 böngésző új lehetőségeit kihasználva (HTML5 audio, canvas, local storage,
+                    SVG; site pinning, jumplist).<br />
+                    A fejlesztést a BME Automatizálási és Alkalmazott Informatikai Tanszéke végezte.
+                    Hangok és zene: Igaz Balázs – Soundbar stúdio<br />
+                </li>
+            </ul>
+        </div>
+        <div id="reader-menu-themes" class="reader-menu-dropdown">
+            <strong>szín</strong>
+            <ul>
+                <li id="reader-menuitem-green">
+                    <a href="#" onclick="Reader.Menu.menuCommands.selectTheme('green');">
+                        fekete
+                    </a>
+                </li>
+                <li id="reader-menuitem-sand">
+                    <a href="#" onclick="Reader.Menu.menuCommands.selectTheme('sand');">
+                        homokszín
+                    </a>
+                </li>
+                <li id="reader-menuitem-blue">
+                    <a href="#" onclick="Reader.Menu.menuCommands.selectTheme('blue');">
+                        ezüst
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="tooltip" style="display: none">
+        &nbsp;
+    </div>
+</body>
+</html>

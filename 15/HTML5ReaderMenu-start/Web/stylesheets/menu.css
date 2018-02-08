@@ -1,0 +1,113 @@
+﻿#reader-menu
+{
+    position:absolute;
+	width:98%;
+	min-width:988px;
+	z-index:50;
+}
+.reader-menu-buttonContainer
+{
+	line-height:70px;
+}
+
+#logo
+{
+    position:absolute;
+    top:15px;
+    left:20px;
+}
+
+#reader-menu-left
+{
+	margin-left:160px;
+	position: absolute;
+}
+
+    #reader-menu-left div
+    {
+        opacity: 0;
+        
+        -ms-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -o-transition: opacity .5s;
+    }
+
+#reader-menu-right
+{
+	margin-right:20px;
+	float:right;
+}
+
+.reader-menu-imageButton
+{
+	margin:8px;
+	border: none;
+}
+
+.reader-menu-dropdown
+{
+	background-position:top;
+	background-repeat:repeat-x;
+	position:absolute;
+	top:60px;
+	display:none;
+	padding-left:8px;
+	padding-right:8px;
+	padding-top:8px;
+	padding-bottom:0px;
+}
+
+.reader-menu-dropdown ul
+{
+    padding: 0px;
+    list-style-type:none;
+}
+		
+.reader-menu-dropdown ul li
+{
+	line-height:40px;
+}
+			
+.reader-menu-dropdown ul li a
+{
+	text-decoration:none;
+	color:inherit;
+}
+		
+#reader-menu-fontSize
+{
+	width:160px;
+	left:380px;
+}
+			
+#reader-menu-fontFamily
+{
+	width:110px;
+	left:440px;
+}
+
+#reader-menu-bookmarks
+{
+	width:380px;
+	left:341px;
+}
+
+#reader-menu-toc
+{
+    width: 380px;
+	left: 272px;
+}
+
+#reader-menu-about
+{
+    width: 380px;
+	left: 28px;
+}
+
+#reader-menu-themes
+{
+    width: 100px;
+	right: 19px;
+}
+

@@ -1,0 +1,12 @@
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\ShooterWeb\SharpShooter\bin\Debug\SharpShooter.xml
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\ShooterWeb\SharpShooter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\ShooterWeb\SharpShooter\obj\Debug\SharpShooter.dll
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\ShooterWeb\SharpShooter\obj\Debug\SharpShooter.pdb
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\SideProject\ShooterWeb\SharpShooter\bin\Debug\SharpShooter.xml
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\SideProject\ShooterWeb\SharpShooter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\SideProject\ShooterWeb\SharpShooter\obj\Debug\SharpShooter.dll
+C:\Users\Nagy Daniel\Documents\Visual Studio 2010\Projects\SideProject\ShooterWeb\SharpShooter\obj\Debug\SharpShooter.pdb
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\SharpShooter\obj\Debug\SharpShooter.csprojResolveAssemblyReference.cache
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\SharpShooter\obj\Debug\SharpShooter.pdb
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\SharpShooter\bin\Debug\SharpShooter.xml
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\SharpShooter\obj\Debug\SharpShooter.dll

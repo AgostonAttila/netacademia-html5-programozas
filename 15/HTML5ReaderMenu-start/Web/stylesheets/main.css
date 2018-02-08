@@ -1,0 +1,32 @@
+html, body, div
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+html, body
+{
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+    min-height: 500px;
+}
+
+body
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	padding: 5px;
+    font-size:11px;	
+}
+
+div.svg-icon {
+    display: inline-block;
+}

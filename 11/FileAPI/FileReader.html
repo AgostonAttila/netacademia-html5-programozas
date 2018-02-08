@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <meta charset="utf-8" />
+
+    <style>
+        .hiba {
+            background-color: #f00;
+            padding: 4px;
+            color: #fff;
+            text-align: center;
+            display: none;
+        }
+
+        .siker {
+            background-color: #0f0;
+            padding: 4px;
+            color: #000;
+            text-align: center;
+            display: none;
+        }
+
+        #doboz {
+            border: 5px dotted #ccc;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+
+            #doboz.csiki {
+                border: 10px dotted black;
+            }
+    </style>
+
+</head>
+<body>
+
+    <div id="doboz"></div>
+
+    <p class="siker">Van File API</p>
+    <p class="hiba">Nincs File API</p>
+    <input type="file" id="fileolvaso" style="display: none;" accept="image/*" onchange="fajlokJottek(this.files)" />
+    <button id="uploadButton" onclick="browseClick()">Fájl választó</button>
+
+    <script>
+
+        function browseClick() {
+            document.getElementById('fileolvaso').click();
+        }
+
+        if (window.FileReader) {
+            $('.siker').show('slow');
+        }
+        else {
+            $('.hiba').show('slow');
+        }
+
+        var keret = $('#doboz')[0];
+
+        $('#doboz').live('dragover', function () { this.className = 'csiki'; return false });
+        $('#doboz').live('dragend', function () { this.className = ''; return false });
+        $('#doboz').live('dragleave', function () { this.className = ''; return false });
+
+        $('#doboz').live('drop', cuccIdeDobva);
+
+        function cuccIdeDobva(e) {
+            this.className = '';
+            e.originalEvent.preventDefault();
+
+            //eredeti nem jQuery-s          
+            olvas(e.originalEvent.dataTransfer.files[0]);
+            return false;
+        }
+
+
+        function olvas(file) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                keret.style.background = "url(" + event.target.result + ") no-repeat center"
+
+                var img = new Image(50);
+              
+
+                $('uploadButton').text("");
+                $('uploadButton').append(img);
+
+                img.src = event.target.result;
+            }
+
+            reader.readAsDataURL(file);
+        }
+
+        function fajlokJottek(fajlok) {
+            olvas(fajlok[0]);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ShooterWeb">
+</Property><Property Name="Solution File" Value="C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb.v11.suo">
+</Property><Property Name="Date" Value="2012. április 14.">
+</Property><Property Name="Time" Value="10:19">
+</Property></Properties><Event ErrorLevel="3" Project="" Source="ShooterWeb.sln" Description="SafeUpgrade">
+</Event><Event ErrorLevel="0" Project="" Source="ShooterWeb.sln" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb.sln">
+</Event><Event ErrorLevel="0" Project="" Source="ShooterWeb.v11.suo" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb.v11.suo">
+</Event><Event ErrorLevel="3" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj" Description="SafeUpgrade">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj" Description="Project file successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\ShooterWeb.csproj">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj.user" Description="Project user file successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\ShooterWeb.csproj.user">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Default.aspx.cs" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Default.aspx.cs">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Default.aspx.designer.cs" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Default.aspx.designer.cs">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Global.asax.cs" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Global.asax.cs">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\munro-webfont.eot" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\munro-webfont.eot">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\munro-webfont.ttf" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\munro-webfont.ttf">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\munro-webfont.woff" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\munro-webfont.woff">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\index.html" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\index.html">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\munro-webfont.svg" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\munro-webfont.svg">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\mscorlib.debug.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\mscorlib.debug.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\mscorlib.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\mscorlib.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\SharpShooter.debug.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\SharpShooter.debug.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\SharpShooter.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\SharpShooter.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Default.aspx" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Default.aspx">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Global.asax" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Global.asax">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\jquery-1.4.1-vsdoc.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\jquery-1.4.1-vsdoc.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\jquery-1.4.1.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\jquery-1.4.1.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Scripts\jquery-1.4.1.min.js" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Scripts\jquery-1.4.1.min.js">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Web.config" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Web.config">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Web.Debug.config" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Web.Debug.config">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\Web.Release.config" Description="File successfully backed up as C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\Backup\ShooterWeb\Web.Release.config">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ShooterWeb.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="ShooterWeb.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ShooterWeb" Source="ShooterWeb\ShooterWeb.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

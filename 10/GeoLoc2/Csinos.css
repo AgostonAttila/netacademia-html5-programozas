@@ -1,0 +1,13 @@
+﻿body {
+    padding: 0.5em 5em;
+}
+
+#map_canvas
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -3;
+}

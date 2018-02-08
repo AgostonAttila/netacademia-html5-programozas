@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+
+    <script>
+
+        //document.cookie
+
+        //nev=ertek;expires=furcsa datumformatum
+
+        //"nev1=ertek;nev2=ertek"
+
+        setCookie("alma", "barack", 1);
+        setCookie("citrom", "dinnye");
+
+        alert(getCookie("alma"));
+        alert(getCookie("eper"));
+
+        function setCookie(nev, ertek, lejart) {
+
+            var cookieErtek = escape(ertek);
+
+            if (lejart) {
+                var lejaratiido = new Date();
+                lejaratiido.setDate(lejaratiido.getDate() + lejart);
+
+                cookieErtek += ";expires=" + lejaratiido.toUTCString();
+
+            }
+            document.cookie = nev + '=' + cookieErtek;
+        }
+
+        function getCookie(nev) {
+          
+            var tNev;
+            var ertek;
+          
+            var cookieTomb = document.cookie.split(';');
+
+            for (var i = 0; i < cookieTomb.length; i++) {
+                tNev = cookieTomb[i].substr(0, cookieTomb[i].indexOf('='));
+                tNev = tNev.replace(/^\s+|\s+$/g, "");
+
+                if (tNev === nev) {
+                    ertek = cookieTomb[i].substr(cookieTomb[i].indexOf("=") + 1);
+                   
+                    return unescape(ertek);
+                }
+            }
+        }
+
+        //tömegesnél split után objektumba rakni
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+c:\users\nagy daniel\documents\visual studio 2010\Projects\ShooterWeb\ShooterWeb\bin\ShooterWeb.dll
+c:\users\nagy daniel\documents\visual studio 2010\Projects\ShooterWeb\ShooterWeb\bin\ShooterWeb.pdb
+c:\users\nagy daniel\documents\visual studio 2010\Projects\ShooterWeb\ShooterWeb\obj\Debug\ResolveAssemblyReference.cache
+c:\users\nagy daniel\documents\visual studio 2010\Projects\ShooterWeb\ShooterWeb\obj\Debug\ShooterWeb.dll
+c:\users\nagy daniel\documents\visual studio 2010\Projects\ShooterWeb\ShooterWeb\obj\Debug\ShooterWeb.pdb
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb\bin\ShooterWeb.dll
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb\bin\ShooterWeb.pdb
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb\obj\Debug\ShooterWeb.csprojResolveAssemblyReference.cache
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb\obj\Debug\ShooterWeb.dll
+C:\Users\Dániel\Dropbox\Docs\Work\HTML játék workshop\SharpShooter\0-VS10\ShooterWeb\obj\Debug\ShooterWeb.pdb

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <span id="counter">0</span>
+    <button id="nulla">Sajat szálon</button>
+    <button id="egy">Egy worker szálon</button>
+    <input id="workercount"/>
+    <button id="sok">Sok worker szálon</button>
+    <script>
+
+        setInterval("ticker()", 500);
+
+        function ticker() {
+            var num = Number($("#counter").text().trim());
+            num++;
+            $("#counter").text(num);
+        }
+
+
+        var max = 100000000;
+
+        function sajatSzal() {
+            $("#counter").text(0);
+
+            var startTime = new Date().getTime();
+
+            var total = 0;
+
+            for (var i = 0; i < max; i++) {
+                
+                total += Math.sqrt(i) * Math.sqrt(i);
+            }
+
+            var totalTime = new Date().getTime() - startTime;
+
+            alert("főszálon: " + total + " " + totalTime / 1000);
+
+
+        }
+
+        function egyWorkerSzal(){
+            $("#counter").text(0);
+            var startTime = new Date().getTime();
+
+            var w = new Worker("/Scripts/TheMan.js");
+
+            //Visszaüzen a szál
+            w.onmessage = function (e) {
+                var totalTime = new Date().getTime() - startTime;
+                alert("egy worker szálon: " + e.data + " " + totalTime / 1000);
+            };
+            //w.onerror
+            //w.terminate kinyirja a szálat
+
+            //kommunikáció 
+            w.postMessage([0, max]);
+        }
+
+
+        function sokWorkerSzal() {
+            $("#counter").text(0);
+            var startTime = new Date().getTime();
+
+
+            var slices = $("#workercount").val().trim();
+            var eredmeny = 0;
+            var round = 0;
+
+            for (var i = 0; i < slices; i++) {
+
+                var workers = [];
+                var w = new Worker("/Scripts/TheMan.js");
+                workers.push(w);
+
+                //Visszaüzen a szál
+                w.onmessage = function (e) {ss                   
+                    round++;
+                    eredmeny += e.data;
+                    if (round == slices) {
+                        var totalTime = new Date().getTime() - startTime;
+                        alert(slices + " worker szálon: " + eredmeny + " " + totalTime / 1000)
+                    }
+                }
+
+                var start = max / slices * i;
+                var end = max / slices + start;
+
+                console.log(start + "-" + end);
+                //kommunikáció 
+                w.postMessage([start, end]); //strigify olja túloldalon parseol kivétel a webkitPostMessage ott onjektumként adja át
+            }
+
+            
+            
+
+        }
+
+
+        $("#nulla").live("click", sajatSzal);
+        $("#egy").live("click", egyWorkerSzal);
+        $("#sok").live("click", sokWorkerSzal);
+
+    </script>
+</body>
+</html>

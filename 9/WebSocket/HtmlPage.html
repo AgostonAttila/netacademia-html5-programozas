@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <div id="statuspanel">
+        <span id="status"></span>
+        <span id="users"></span>
+    </div>
+
+    <div id="messages" style="display:none">
+        <canvas id="canvas" height="300" width="400"></canvas>
+        <div id="wall">
+            <div data-bind="foreach: messages">
+                <section class="message">
+                    <div data-bind="text: time + '' + ip"></div>
+                    <div data-bind="style:{ backgroundColor: 'rgba('+color.r+','+color.g+','+color.b+','+0.5+')'}, text: name"></div>
+                    <div data-bind="text: message"></div>
+                    <div data-bind="if: picture">
+                             <img data-bind="attr: {src:picture}" />
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="control">
+
+        <div id="connectPanel">
+            <input id="nickname" />
+            <button id="openbutton">Open</button>
+        </div>
+
+        <div id="inputPanel">
+            <textarea id="messagearea" rows="3" maxlength="200"></textarea>
+            <button id="sendbutton">Send</button>
+            <button id="closebutton">Close</button>
+
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="Scripts/knockout.js"></script>
+    <script src="Komm.js"></script>
+
+</body>
+</html>

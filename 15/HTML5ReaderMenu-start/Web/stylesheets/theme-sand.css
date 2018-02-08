@@ -1,0 +1,22 @@
+﻿body
+{
+    background-color: #6A5039;
+    background-image:url("../images/sand/bg.png");
+	background-repeat:repeat-y;
+	background-position: center;
+	color:white;
+}
+
+.reader-menu-dropdown
+{
+	color: #6A4E38;
+	background-color: rgba(237, 192, 68, 0.9);
+	background-image: url("../images/sand/dropdown-header-bg.png");
+}
+
+#tooltip
+{
+    color: #6A4E38;
+	background-color: rgba(241, 182, 16, 0.9);
+    border: 2px solid #6A4E38;
+}

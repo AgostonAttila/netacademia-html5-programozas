@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table>
+        <tr>
+            <th>key</th>
+            <th>oldValue</th>
+            <th>newValue</th>
+            <th>url</th>
+            <th>inStorage</th>
+        </tr>
+    </table>
+
+    <script>
+        var tbl = document.getElementById("adat");
+        window.onstorage = tarolas;
+
+        function tarolas(e) {
+            var sor = "<tr>";
+            sor += "<td>" + e.key + "</td>";
+            sor += "<td>" + e.oldValue + "</td>";
+            sor += "<td>" + e.newValue + "</td>";
+            sor += "<td>" + e.url + "</td>";
+            sor += "<td>" + (e.storageArea == localStorage) + "</td>";
+            sor += "</tr>";
+
+            tbl.innerHTML += sor;
+
+        }
+
+    </script>
+
+</body>
+</html>

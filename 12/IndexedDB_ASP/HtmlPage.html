@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script>
+
+
+
+        //IDBTransaction.READ_WRITE;  tranzakcionált ennél egyszerre csak ez írhatja ha olvasó akkor több is
+        //IDBTransaction.VERSION_CHANGE  lehet sémát változtatni
+        //IDBDatabase db
+        //IDBObjectStore  "táblák" tudni kell a kulcsot, de lehet indexeket is létrehozni
+
+        //IDBIndex fizikailag megvannak a memóriában intervallum alapján is lehet lekérdezni IDBKeyRange
+
+        // nem SQL nyelv, js objektumok,
+
+        //IDBCursor.NEXT miylen irányba menjünk az adatszakaszon
+
+        window.indexedDB = window.indexedDB || window.mozIndexedDB || window.msIndexedDB || window.webkitIndexedDB;
+        window.IDBCursor = window.IDBCursor || window.mozIDBCursor || window.msIDBCursor || window.webkitIDBCursor;
+        window.IDBTransaction = window.IDBTransaction || window.mozIDBTransaction || window.msIDBTransaction || window.webkitIDBTransaction;
+        window.IDBKeyRange = window.IDBKeyRange || window.mozIDBKeyRange || window.msIDBKeyRange || window.webkitIDBKeyRange;
+
+        if (!window.indexedDB)
+            alert("itt nincs indexedDB támogatás");
+
+        var SouthWind = { version: 3 };
+
+        SouthWind.Open = function (callback) {
+
+            if (SouthWind.db) {
+                callback();
+                return;
+            }
+
+            //IDBRequest eredmény
+            var req = indexedDB.open("Southwind", SouthWind.version);
+
+            req.onerror = SouthWind.OpenFailed;
+
+            if (typeof req.onupgradeneeded === "undefinied") {
+                //chrome
+                console.log('chrome');
+
+                req.onsuccess = function (e) {
+                    SouthWind.db = e.target.result;
+                    console.log("adatbázis megszerezve");
+
+                    if (SouthWind.db.version !== SouthWind.version) {
+                        console.log("upgradelni kell " + SouthWind.db.version + "->" + SouthWind.version);
+                        var verReq = SouthWind.db.setVersion(SouthWind.version);
+
+                        verReq.onsuccess = function (e) {
+                            SouthWind.CreateSchema(e);
+                            SouthWind.Opened();
+                            callback();
+                        }
+                    }
+                    else {
+                        callback();
+                        console.log("passzolt a verzió ");
+                        SouthWind.Opened();
+                    }
+
+                  
+
+                }
+
+            }
+            else {
+                //firefox
+                console.log('firefox');
+
+                req.onupgradeneeded = function (e) {
+                    console.log("upgradelni kell " + e.oldVersion + "->" + e.newVersion);
+                    SouthWind.CreateSchema(e);                  
+                }
+
+                req.onsuccess = function (e) {
+                    SouthWind.db = e.target.result;
+                    console.log("adatbázis megszerezve");
+                    callback();
+                    SouthWind.Opened();
+                }
+            }
+        }
+
+        SouthWind.OpenFailed = function () {
+            console.log("adatbázis megnyitása sikertelen");
+        };
+
+        SouthWind.CreateSchema = function (e) {
+            console.log("schema upgrade");
+
+
+            //Chrome targetem source a
+            //Firefox target result-a a database
+
+            var dataBase;
+
+            if (e.target.source === null) {
+                //firefox
+                dataBase = e.target.result;
+                console.log("schema firefox db");
+            }
+            else {
+                //chrome
+                dataBase = e.target.source;
+                console.log("schema chrome db");
+            }
+
+            //itt dobálhatom az object storeokot kedvemre
+            var productStore;
+            if (dataBase.objectStoreNames.contains("products") === false) {
+                var productStore = dataBase.createObjectStore("products", {autoIncrement : true,keyPath: "id" });
+            }
+            else {
+                productStore =  e.target.transaction.objectStore("products");
+            }
+
+           var colorIndex = productStore.createIndex("colorIndex","color");
+
+
+        };
+
+        SouthWind.Opened = function () {
+            console.log("object store nevek: ");
+            for (var i = 0; i < SouthWind.db.objectStoreNames.length; i++) {
+                console.log(SouthWind.db.objectStoreNames[i]);
+            }
+        };
+
+
+        SouthWind.AddItem = function (item) {
+
+            SouthWind.Open(function () {
+                var trans = SouthWind.db.transaction(["products"], IDBTransaction.READ_WRITE);
+                var store = trans.objectStore("products");
+                var req = store.put(item); //add put addnál kell kulcs,ha van olyan kulcsú elszáll put kicseréli ,delete(key)
+
+
+                req.onsuccess = function (e) {
+                    console.log("sikerült hozzáadni. kulcs: " + e.target.result);
+                }
+
+
+                req.onerror = function (e) {
+                    console.log("nem sikerült hozzáadni");
+                }
+            });
+        }
+
+
+        SouthWind.Delete = function () {
+            var req = indexedDB.deleteDatabase("SouthWind");
+
+            req.onsuccess = function () {
+                console.log("sikerült törölni: ");
+            }
+
+        }
+
+        SouthWind.GetItem = function (key) {
+            SouthWind.Open(function () {
+                var trans = SouthWind.db.transaction(["products"], IDBTransaction.READ_ONLY);
+                var store = trans.objectStore("products");
+
+                var req = store.get(key);
+
+
+                req.onsuccess = function (e) {
+                    console.log(e.target.result);
+                }
+
+                req.onerror = function () {
+                    console.log("nincs ilyen elem elszállt");
+                }
+
+            });
+        }
+
+        SouthWind.DeleteItem = function (key) {
+            SouthWind.Open(function () {
+                var trans = SouthWind.db.transaction(["products"], IDBTransaction.READ_WRITE);
+                var store = trans.objectStore("products");
+
+                var req = store.delete(key);
+
+
+                req.onsuccess = function (e) {
+                    console.log("letöröltem");
+                }
+
+                req.onerror = function () {
+                    console.log("nincs ilyen elem elszállt");
+                }
+
+            });
+        }
+
+        SouthWind.ListAllItem = function () {
+            SouthWind.Open(function () {
+                var trans = SouthWind.db.transaction(["products"], IDBTransaction.READ_ONLY);
+                var store = trans.objectStore("products");
+
+                var req = store.openCursor(IDBKeyRange.bound(1,4),IDBCursor.PREV);
+
+
+                req.onsuccess = function (e) {
+                    var cursor = e.target.result;
+                    if (cursor) {
+                        console.log(cursor.value);
+                        cursor.continue();
+                    }                  
+                }
+
+                req.onerror = function () {
+                    console.log("nincs ilyen range");
+                }
+
+            });
+        }
+
+
+        SouthWind.ListPirosItem = function () {
+            SouthWind.Open(function () {
+                var trans = SouthWind.db.transaction(["products"], IDBTransaction.READ_ONLY);
+                var store = trans.objectStore("products");
+                var index = store.index("colorIndex");
+
+                //index.openKeyCursor
+
+                var req = store.openCursor(IDBKeyRange.only("piros"),IDBCursor.NEXT);
+
+
+                req.onsuccess = function (e) {
+                    var cursor = e.target.result;
+                    if (cursor) {
+                        console.log(cursor.value);
+                        cursor.continue();
+                    }
+                }
+
+                req.onerror = function () {
+                    console.log("nincs ilyen range");
+                }
+
+            });
+        }
+
+
+        //SouthWind.Open();
+        //SouthWind.AddItem({name: "elso termek", color: "piros"});
+        //SouthWind.GetItem(1);
+        SouthWind.ListAllItem();
+        //SouthWind.Delete();
+
+    </script>
+</body>
+</html>
